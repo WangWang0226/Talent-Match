@@ -1,15 +1,19 @@
-# Contents of /resume-analyzer/resume-analyzer/README.md
+# Talent Match
 
-# Resume Analyzer
-
-This project is a web application designed to help HR professionals review resumes efficiently. It allows users to upload multiple PDF resumes, processes them, and enables users to ask questions regarding the content of the resumes.
+This project is a web application using LLM + RAG technique, designed to help HR professionals review resumes efficiently. It allows users to upload multiple PDF resumes, store them in vector store, and enables users to compare and ask questions regarding the content of the resumes.
 
 ## Features
+- Select multiple PDF files to upload to the Pinecone vector store.
+- Enter your job description.
+- Click `compare` button to compare these resumes.
+![TalentMatch Demo](/public/demo-talent-match-1080p-part1.gif)
 
-- Upload multiple PDF files.
-- Extract and analyze text from resumes.
-- Store and retrieve data using Pinecone vector database.
-- User-friendly web interface for interaction.
+- You can see the comparison result in the LLM Response field:
+![Comparison Result](/public/query-response.png)
+
+- You can also ask questions to the resumes:
+![Comparison Result](/public/demo-talent-match-1080p-part2.gif)
+
 
 ## Project Structure
 
@@ -23,39 +27,35 @@ This project is a web application designed to help HR professionals review resum
   - `static`: Contains CSS and JavaScript files.
   - `templates`: Contains HTML templates.
 
-## Setup Instructions
+## Quick Start
 
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd resume-analyzer
+   cd ResumeGPT-Assistant
    ```
 
 2. Create a virtual environment and activate it:
    ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   # Install pipenv if not installed
+   brew install pipenv
+
+   # Install from Pipfile
+   pipenv install
+
+   # Activate pipenv virtual environment
+   pipenv shell
    ```
 
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+3. Set up environment variables in the `.env` file, you can refer to `.env.example`.
 
-4. Set up environment variables in the `.env` file.
-
-5. Run the application:
+4. Run the application:
    ```
    python src/backend/app.py
    ```
 
-6. Open your web browser and go to `http://127.0.0.1:5000`.
+5. Open your web browser and go to `http://127.0.0.1:5000`.
 
-## Usage
-
-- Navigate to the upload page.
-- Select multiple PDF files to upload.
-- Ask questions about the resumes after processing.
 
 ## License
 
