@@ -32,7 +32,7 @@ This project is a web application using LLM + RAG technique, designed to help HR
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd ResumeGPT-Assistant
+   cd Talent-Match
    ```
 
 2. Create a virtual environment and activate it:
