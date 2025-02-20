@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>TalentMatch</h1>
+
+    <div class="upload-section">
+        <h2>Upload Resumes</h2>
+        <input type="file" id="fileInput" multiple accept=".pdf">
+        <button onclick="uploadFiles()">Upload to Vector Store</button>
+        <div id="uploadLoader" class="loader"></div>
+    </div>
+
+    <div class="flex-container">
+        <div class="query-section">
+            <h2>Post JD and Compare the Resumes!</h2>
+            <textarea id="queryInput" placeholder="Enter your JD informatino here..."></textarea>
+            <button id="queryButton" onclick="submitQuery()">Compare</button> 
+        </div>
+        <div class="ask-section">
+            <h2>Ask Questions About Resumes</h2>
+            <textarea id="askInput" placeholder="Ask specific questions about the resumes..."></textarea>
+            <button id="askButton" onclick="submitAsk()">Ask</button>
+        </div>
+    </div>
+    <div id="llmLoader" class="loader"></div>
+    <div class="response-section">
+        <h2>LLM Response:</h2>
+        <div id="responseText" class="markdown-body"></div>
+    </div>
+</div>
+{% endblock %}
